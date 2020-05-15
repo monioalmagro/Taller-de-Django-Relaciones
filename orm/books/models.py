@@ -7,7 +7,7 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     #primer argumento el modelo con el que hacemos la relación
     #on_delete = CASCADE cuando borro un author tambien la reciones con los libros
-    author = models.ForeignKey(Author,on_delete=models.CASCADE)
+    author = models.ForeignKey(Author,on_delete=models.CASCADE , related_name = 'books' )
     
     pages = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
